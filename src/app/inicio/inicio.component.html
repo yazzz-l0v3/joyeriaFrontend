@@ -1,0 +1,75 @@
+<div class="container">
+    <br>
+    <br>
+    <br> 
+    <div class="row align-items-center mb-4 row-custom">
+      <div class="col-8">
+        <h2 class="fw-bold">Listado de Productos</h2>
+      </div>
+      <div class="col-4 text-end">
+        <button routerLink="/registrar" class="btn btn-outline-primary">
+          Nuevo Producto
+        </button>
+      </div>
+    </div>
+    <div class="table-responsive">
+
+        <div class="mat-elevation-z8" >
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" #tabla1>
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> Id </th>
+                  <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="imagenUrl">
+                  <th mat-header-cell *matHeaderCellDef> Imagen </th>
+                  <td mat-cell *matCellDef="let element">
+                    <img [src]="element.imagenUrl" alt="Imagen del Producto" width="100" height="100" />
+                  </td>
+                </ng-container>   
+              
+                <ng-container matColumnDef="nombreProd">
+                  <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                  <td mat-cell *matCellDef="let element"> {{element.nombreProd}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="descripcionProd">
+                  <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                  <td mat-cell *matCellDef="let element"> {{element.descripcionProd}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="precioProd">
+                  <th mat-header-cell *matHeaderCellDef> Precio </th>
+                  <td mat-cell *matCellDef="let element"> {{element.precioProd}} </td>
+                </ng-container>
+              
+             
+        
+                  <ng-container matColumnDef="marca">
+                    <th mat-header-cell *matHeaderCellDef> Marca </th>
+                    <td mat-cell *matCellDef="let element"> {{element.marca.nombre}} </td>
+                  </ng-container>
+        
+                  <ng-container matColumnDef="acciones">
+                    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                    <td mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Editar producto" [routerLink]="['editar/', element.id]" style="vertical-align: middle;">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button matTooltip="Eliminar producto" (click)="eliminar(element.id)" style="vertical-align: middle;">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+                  <tr class="mat-row" *matNoDataRow>
+                      <td class="mat-cell" colspan="9999" style="text-align: center">
+                          No se encontraron coincidencias.
+                      </td>
+                  </tr>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+          </div>
+    </div>
+  </div>

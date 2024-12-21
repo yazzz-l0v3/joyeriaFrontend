@@ -1,0 +1,66 @@
+/* Estilo para las filas de la tabla */
+.mat-mdc-row {
+  height: 50px; /* Ajustamos el tamaño de las filas para dar más espacio */
+  padding: 10px 15px; /* Añadimos un poco de padding para que el contenido no esté pegado */
+}
+
+/* Filas impares con fondo morado claro */
+.mat-mdc-row:nth-child(odd) {
+  background-color: #f4e3ff !important; /* Morado claro */
+}
+
+/* Filas pares con fondo morado más suave */
+.mat-mdc-row:nth-child(even) {
+  background-color: #e5ccfa !important; /* Morado más suave */
+}
+
+/* Celdas sin bordes y mejor espaciado */
+.mat-mdc-cell {
+  border: none !important;
+  padding: 10px 15px; /* Añadir un poco de espacio interno */
+  font-size: 14px; /* Ajustar el tamaño de la fuente */
+}
+
+/* Encabezados de la tabla con fondo morado oscuro y texto en negrita */
+.mat-mdc-header-row {
+  background-color: #6A4C9C; /* Morado oscuro */
+  color: white;
+  text-align: center;
+  padding: 10px 15px; /* Espaciado en los encabezados */
+  font-size: 16px; /* Tamaño de fuente para los encabezados */
+  font-weight: bold; /* Hacer que los encabezados estén en negrita */
+}
+
+/* Estilo para las celdas de imagen para que no estén pegadas a las celdas */
+.mat-mdc-cell img {
+  max-width: 100px; /* Limitar el tamaño de la imagen */
+  max-height: 100px;
+  margin: 5px; /* Espacio alrededor de la imagen */
+  border-radius: 8px; /* Bordes redondeados para las imágenes */
+}
+
+/* Añadir un borde suave alrededor de las celdas de la tabla */
+.mat-mdc-cell, .mat-mdc-header-cell {
+  border-bottom: 1px solid #ccc; /* Borde suave debajo de cada celda */
+}
+
+/* Estilo para los botones dentro de las celdas de acciones */
+button.mat-icon-button {
+  margin: 0 5px; /* Espacio entre los botones */
+  color: #6A4C9C; /* Color del ícono en los botones (morado oscuro) */
+}
+
+/* Estilo para la fila sin datos */
+.mat-mdc-row.mat-no-data {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  font-size: 16px;
+}
+
+/* Paginación */
+.mat-paginator {
+  background-color: #6100fd; /* Morado oscuro */
+  color: white;
+  padding: 10px;
+}

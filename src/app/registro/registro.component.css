@@ -1,0 +1,67 @@
+.registro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #673ab7, #9c27b0); /* Degradado morado */
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  mat-card {
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    color: #673ab7; 
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  mat-form-field .mat-form-field-label {
+    color: #673ab7;
+    font-weight: bold;
+  }
+  
+  mat-form-field mat-icon {
+    color: #9c27b0; 
+  }
+  
+  button[mat-raised-button] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #673ab7, #9c27b0); /* Degradado morado */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
+  }
+  
+  button[mat-raised-button]:hover {
+    background: linear-gradient(135deg, #9c27b0, #673ab7); /* Invertir degradado */
+  }
+  
+  button[mat-raised-button]:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  

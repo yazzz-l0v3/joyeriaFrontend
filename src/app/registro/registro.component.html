@@ -1,0 +1,72 @@
+<div class="registro-container">
+  <mat-card>
+    <mat-card-title 
+      style="margin: 20px auto 20px auto; color: rgb(68, 5, 105);" 
+      class="fw-bold">
+      Registro
+    </mat-card-title>
+    <mat-card-content>
+      <form #registroForm="ngForm" (ngSubmit)="registrarUsuario()">
+        <div class="two-columns">
+          <mat-form-field class="full-width">
+            <mat-label>Nombre</mat-label>
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput [(ngModel)]="datos.nombres" name="nombres" required />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Apellido Paterno</mat-label>
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput [(ngModel)]="datos.apellidoPaterno" name="apellidoPaterno" required />
+          </mat-form-field>
+        </div>
+
+        <div class="two-columns">
+          <mat-form-field class="full-width">
+            <mat-label>Apellido Materno</mat-label>
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput [(ngModel)]="datos.apellidoMaterno" name="apellidoMaterno" required />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>DNI</mat-label>
+            <mat-icon matPrefix>credit_card</mat-icon>
+            <input matInput [(ngModel)]="datos.dni" name="dni" required />
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="full-width">
+          <mat-label>Usuario</mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input matInput [(ngModel)]="datos.usuario" name="usuario" required />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Correo Electrónico</mat-label>
+          <mat-icon matPrefix>email</mat-icon>
+          <input matInput type="email" [(ngModel)]="datos.correo" name="correo" required />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Clave</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input matInput type="password" [(ngModel)]="datos.clave" name="clave" required />
+        </mat-form-field>
+
+        <div style="text-align: center;">
+          <button mat-raised-button color="primary" type="submit" [disabled]="registroForm.invalid">
+            Registrar
+          </button>
+        </div>
+      </form>
+
+      <mat-card-actions style="text-align: center; margin-top: 15px;">
+        <button mat-button color="accent" (click)="irALogin()">¿Aún no tienes cuenta? Regístrate aquí</button>
+      </mat-card-actions>
+
+    </mat-card-content>
+
+  </mat-card>
+</div>
+
+

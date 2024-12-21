@@ -1,0 +1,82 @@
+<div class="container">
+    <br>
+    <div class="row align-items-center mb-4 row-custom">
+        <div class="col-8">
+            <h2 class="fw-bold">
+                @if (editarDatosProducto) {
+                    Editar
+                } @else {
+                    Nuevo
+                }
+                Producto</h2>
+          </div>
+      <div class="col-4 text-end">
+        <button routerLink="/inicio" class="btn btn-outline-primary">
+          Regresar
+        </button>
+      </div>
+    </div>
+    @if(form){
+        <form [formGroup]="form" (ngSubmit)="guardar()" class="row g-3">
+      <!-- Nombre del producto -->
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Nombre del Producto</mat-label>
+          <input matInput type="text" autocomplete="off" name="nombreProd" formControlName="nombreProd" />
+          <mat-error>Campo obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <!-- Descripción del producto -->
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Descripción del Producto</mat-label>
+          <input matInput type="text" autocomplete="off" name="descripcionProd" formControlName="descripcionProd" />
+          <mat-error>Campo obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <!-- Precio del producto -->
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Precio del Producto</mat-label>
+          <input matInput type="number" autocomplete="off" name="precioProd" formControlName="precioProd" />
+          <mat-error>Campo obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <!-- URL de la imagen -->
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>URL de la Imagen</mat-label>
+          <input matInput type="text" autocomplete="off" name="imagenUrl" formControlName="imagenUrl" />
+          <mat-error>Campo obligatorio</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <!-- Marca del producto -->
+      <div class="col-md-4">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Marca</mat-label>
+                    <mat-select [formControlName]="'idMarca'">
+                      @for (topping of listaMarcas; track topping) {
+                          <mat-option [value]="topping.id">{{ topping.nombre }}</mat-option>
+                      }
+                    </mat-select>
+                    <mat-error >Campo obligatorio</mat-error>
+                  </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-outline-primary" style="margin-top: 0%;">
+                    @if (editarDatosProducto) {
+                        Actualizar
+                    } @else {
+                        Registrar 
+                    }
+                    Producto
+                </button>
+            </div>
+        </form>
+}
+  </div>
+  
